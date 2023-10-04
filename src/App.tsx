@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import comic01 from "./assets/comic01.jpg";
 import comic02 from "./assets/comic02.jpg";
 import comic03 from "./assets/comic03.jpg";
@@ -12,6 +12,12 @@ function App() {
 		return result >= 0 ? result : result + m;
 	}
 
+	useEffect(() => {
+		setTimeout(() => {
+			setActive((prev) => (prev + 1) % comics.length);
+		}, 3000);
+	}, [active]);
+
 	return (
 		<div className="App">
 			<div className="carousel">
@@ -22,7 +28,7 @@ function App() {
 					let className: string;
 
 					if (index === active) {
-						className = "card card-active";
+						className = "card card--active";
 					} else if (index === leftIndex) {
 						className = "card card--inactive--left";
 					} else if (index === rightIndex) {

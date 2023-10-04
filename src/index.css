@@ -24,17 +24,23 @@
 	object-fit: cover;
 	position: absolute;
 	height: 525px;
+	opacity: 0;
+	transition: 500ms;
 	width: 350px;
+}
+
+.card--active {
+	opacity: 100%;
+	transform: scale(1);
+	z-index: 999;
 }
 
 .card--inactive--left {
 	opacity: 0.3;
 	transform: translateX(-125%) scale(0.8);
-	transition: 500ms;
 }
 
 .card--inactive--right {
 	opacity: 0.3;
 	transform: translateX(125%) scale(0.8);
-	transition: 500ms;
 }
