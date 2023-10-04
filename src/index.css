@@ -26,3 +26,15 @@
 	height: 525px;
 	width: 350px;
 }
+
+.card--inactive--left {
+	opacity: 0.3;
+	transform: translateX(-125%) scale(0.8);
+	transition: 500ms;
+}
+
+.card--inactive--right {
+	opacity: 0.3;
+	transform: translateX(125%) scale(0.8);
+	transition: 500ms;
+}
